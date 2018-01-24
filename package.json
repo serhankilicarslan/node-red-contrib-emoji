@@ -1,0 +1,23 @@
+{
+    "name": "node-red-contrib-emoji",
+    "version": "1.0.0",
+    "description": "Node-red text to emoji",
+    "node-red": {
+        "nodes": {
+            "emoji": "node/emoji.js"
+        }
+    },
+    "repository" :{ 
+        "type" : "git", 
+        "url" : "https://github.com/serhankilicarslan/node-red-contrib-emoji"
+    },
+    "dependencies": {
+        "node-emoji": "^1.8.1"
+    },
+    "main": "emoji.js",
+    "keywords": [
+        "node-red", "emoji"
+    ],
+    "author": "Serhan KILICARSLAN",
+    "license": "MIT"
+}
