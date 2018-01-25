@@ -1,26 +1,60 @@
 <script type="text/javascript">
-    RED.nodes.registerType('emojify',{
-        category: 'function',
-        color: '#a6bbcf',
+    RED.nodes.registerType('Emojify',{
+        category: 'emoji',
+        color: '#FFCC66',
         defaults: {
             name: {value:""}
         },
+        align: 'right',
         inputs:1,
         outputs:1,
-        icon: "file.png",
+        icon: "inject.png",
         label: function() {
-            return this.name||"Emojify";
+            return this.name||"Text to Emoji";
+        }
+    });
+
+    RED.nodes.registerType('UnEmojify',{
+        category: 'emoji',
+        color: '#FFCC66',
+        defaults: {
+            name: {value:""}
+        },
+        align: 'left',
+        inputs:1,
+        outputs:1,
+        icon: "inject.png",
+        label: function() {
+            return this.name||"Emoji to Text";
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="emojify">
+<script type="text/x-red" data-template-name="Emojify">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="emojify">
-    <p>A simple Emojify description</p>
+<script type="text/x-red" data-help-name="Emojify">
+    <p>Emojify convert text to emoji.</p>
+    <p>Input msg.payload -> "I :heart: coffie!"</p>
+    <p>Output msg.payload -> "I ❤ coffie!"</p>
+    <p>Emoji text List <br>https://raw.githubusercontent.com/omnidan/node-emoji/master/lib/emoji.json</p>
+</script>
+
+
+<script type="text/x-red" data-template-name="UnEmojify">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="UnEmojify">
+    <p>Emojify convert emoji to text.</p>
+    <p>Input msg.payload -> "I ❤ coffie!"</p>
+    <p>Output msg.payload -> "I :heart: coffie!"</p>
+    <p>Emoji text List <br>https://raw.githubusercontent.com/omnidan/node-emoji/master/lib/emoji.json</p>
 </script>
